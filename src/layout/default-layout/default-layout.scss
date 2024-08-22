@@ -9,8 +9,7 @@
         width: $default-layout-width;
         max-width: 100%;
         padding: 0 $default-layout-horizontal-spacer;
-        margin-top: $default-layout-header-height;
-        background-color: #333;
+        margin-top: $default-layout-header-height;       
 
         .content {
            flex: 1;
