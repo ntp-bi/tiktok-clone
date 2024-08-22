@@ -20,7 +20,7 @@
     &__center {
         @include flex(center, unset);
         position: relative;
-        width: 361px;
+        width: 450px;
         height: 46px;
         border: 1.5px solid transparent;
         background-color: rgba(22, 24, 35, 0.06);
@@ -81,5 +81,15 @@
                 background-color: rgba(22, 24, 35, 0.06);
             }
         }
-    }  
+    }
+
+    &__right {
+        @include flex(center, space-between);
+
+        &__icon {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+    }
 }

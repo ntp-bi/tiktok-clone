@@ -1,0 +1,92 @@
+@use "../../sass/" as *;
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    padding: 9px 16px;
+    min-width: 100px;
+    font-weight: 700;
+    border-radius: 4px;
+    background-color: $white-color;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-family: $font-family;
+    user-select: none;
+
+    + .btn {
+        margin: 0 16px;
+    }
+
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+
+    &__icon + &__title,
+    &__title + &__icon {
+        margin-left: 8px;
+    }
+
+    &__icon {
+        display: inline-block;
+        width: 24px;
+        text-align: center;
+    }
+
+    // Button types
+    &__rounded {
+        border-radius: 999px;
+        border-color: #e3e3e4;
+        box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
+
+        &:hover {
+            border-color: rgba(22, 24, 35, 0.2);
+            background-color: rgba(22, 24, 35, 0.03);
+        }
+    }
+
+    &__primary {
+        background-color: $primary-color;
+        color: $white-color;
+        border-color: $primary-color;
+
+        &:hover {
+            border-color: $primary-color;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)),
+                #fe2c55;
+        }
+    }
+
+    &__outline {
+        color: $primary-color;
+        border-color: currentColor;
+
+        &:hover {
+            border-color: currentColor;
+            background-color: rgba(254, 44, 85, 0.06);
+        }
+    }
+
+    &__text {      
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    // Button size
+    &__small {
+        min-width: 88px;
+        padding: 4px 16px;
+    }
+
+    &__large {
+        min-width: 140px;
+        padding: 14px 16px;
+    }
+}
+
+// .btn ~ .btn {
+//     margin-left: 8px;
+// }
