@@ -1,10 +1,11 @@
 import React from 'react'
+import Router from './routes/Router';
 import "./App.scss";
 
 const App = () => {
   return (
-    <div>
-      App
+    <div className='App'>
+      <Router/>
     </div>
   )
 }
