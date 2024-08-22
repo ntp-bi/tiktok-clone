@@ -1,13 +1,20 @@
-import React from 'react'
+import React from "react";
+import PropTypes from "prop-types";
+import Header from "../../components/header/Header";
 
-import "./header-only.scss";
+const HeaderOnly = (props) => {
+    return (
+        <div className="wrapper">
+            <Header />
+            <div className="container">
+                <div className="content">{props.children}</div>
+            </div>
+        </div>
+    );
+};
 
-const HeaderOnly = () => {
-  return (
-    <div>
-      HeaderOnly
-    </div>
-  )
-}
+HeaderOnly.propTypes = {
+    children: PropTypes.node.isRequired,
+};
 
-export default HeaderOnly
+export default HeaderOnly;
