@@ -1,0 +1,38 @@
+@use "../../sass/" as *;
+
+.account-item {
+    @include flex(center, unset);
+    padding: 6px 16px;
+    cursor: pointer;
+
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+    }
+
+    &__image {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    &__info {
+        flex: 1;
+        margin-left: 12px;
+
+        &__name {
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+
+        &__icon {
+            margin-left: 6px;
+            color: rgb(32, 213, 236);
+        }
+        
+        &__username {
+            font-size: 1.4rem;
+            color: rgba(22, 24, 35, 0.5);
+        }
+    }
+}
