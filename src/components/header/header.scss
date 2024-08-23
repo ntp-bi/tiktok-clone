@@ -10,7 +10,7 @@
     width: 100%;
     height: $default-layout-header-height;
     box-shadow: 0px 1px 1px rgba(0 0 0 / 12%);
-
+    
     &__container {
         @include flex(center, space-between);
         height: 100%;
@@ -97,10 +97,11 @@
     &__right {
         @include flex(center, space-between);
 
-        &__icon {
-            width: 20px;
-            height: 20px;
+        &__more--btn {
             cursor: pointer;
-        }
+            font-size: 2rem;       
+            padding: 4px 8px;
+            background-color: transparent;
+        }        
     }
 }

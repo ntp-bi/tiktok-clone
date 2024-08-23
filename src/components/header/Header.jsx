@@ -9,6 +9,7 @@ import { faCircleXmark, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { SearchIcon, EllipsisVerticalIcon } from "../icons/Icon";
 import { configPath } from "../../config/configPath";
 
+import Menu from "../menu/Menu";
 import Button from "../button/Button";
 import Helmet from "../helmet/Helmet";
 import Popper from "../popper/Popper";
@@ -66,7 +67,11 @@ const Header = () => {
                     <div className="header__right">
                         <Button text>Upload</Button>
                         <Button primary>Login</Button>
-                        <EllipsisVerticalIcon className="header__right__icon" />
+                        <Menu>
+                            <button className="header__right__more--btn">
+                                <EllipsisVerticalIcon />
+                            </button>
+                        </Menu>
                     </div>
                 </nav>
             </header>

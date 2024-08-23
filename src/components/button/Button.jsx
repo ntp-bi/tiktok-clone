@@ -54,10 +54,10 @@ const Button = ({
 
     if (to) {
         buttonProps.to = to;
-        Comp = Link;
+        Component = Link;
     } else if (href) {
         buttonProps.href = href;
-        Comp = "a";
+        Component = "a";
     }
 
     return (
