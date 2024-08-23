@@ -4,14 +4,15 @@ import Tippy from "@tippyjs/react/headless";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { KeyboardIcon, LanguageIcon, QuestionMarkIcon } from "../icons/Icon";
+import { KeyboardIcon, LanguageIcon, QuestionMarkIcon, ThemeIcon } from "../icons/Icon";
 
 import Button from "../button/Button";
 import Popper from "./../popper/Popper";
+import { configPath } from "../../config/configPath";
 
 import "./menu.scss";
 
-const MENU_ITEMS = [
+export const MENU_ITEMS = [
     {
         icon: <LanguageIcon />,
         title: "English",
@@ -34,25 +35,42 @@ const MENU_ITEMS = [
     {
         icon: <QuestionMarkIcon />,
         title: "Feedback and help",
-        to: "/feedback",
+        to: configPath.feedback,
     },
     {
         icon: <KeyboardIcon />,
         title: "Keyboard shortcuts",
     },
+    {
+        icon: <ThemeIcon />,
+        title: "Dark mode",
+        children: {
+            title: "Dark mode",
+            data: [
+                {
+                    type: "light",
+                    title: "Light mode",
+                },
+                {
+                    type: "dark",
+                    title: "Dark mode",
+                },
+            ],
+        },
+    },
 ];
 
 const defaultFn = () => {};
 
-const Menu = (props) => {
-    const [history, setHistory] = useState([{ data: MENU_ITEMS }]);
+const Menu = ({ children, items = [], onChange = defaultFn }) => {
+    const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
-    const onChange = props.onChange || defaultFn;
 
     return (
         <Tippy
             interactive
             delay={[0, 700]}
+            offset={[12, 8]}
             placement="bottom-end"
             render={(attrs) => (
                 <div className="menu" tabIndex="-1" {...attrs}>
@@ -88,10 +106,16 @@ const Menu = (props) => {
                     </Popper>
                 </div>
             )}
+            onHide={() => setHistory((prev) => prev.slice(0, 1))}
         >
-            {props.children}
+            {children}
         </Tippy>
     );
+};
+
+Menu.propTypes = {
+    items: PropTypes.array.isRequired,
+    children: PropTypes.node.isRequired,
 };
 
 export const HeaderMenu = ({ title, onBack }) => {
@@ -106,8 +130,15 @@ export const HeaderMenu = ({ title, onBack }) => {
 };
 
 export const MenuItem = ({ item, onClick }) => {
+    const separate = item.separate ? "separate" : "";
+
     return (
-        <Button className="menu-item" leftIcon={item.icon} to={item.to} onClick={onClick}>
+        <Button
+            className={`menu-item ${separate}`}
+            leftIcon={item.icon}
+            to={item.to}
+            onClick={onClick}
+        >
             {item.title}
         </Button>
     );
@@ -116,6 +147,7 @@ export const MenuItem = ({ item, onClick }) => {
 HeaderMenu.propTypes = {
     title: PropTypes.string.isRequired,
     onBack: PropTypes.func.isRequired,
+    separate: PropTypes.bool,
 };
 
 MenuItem.propTypes = {
