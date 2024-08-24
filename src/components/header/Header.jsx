@@ -3,11 +3,7 @@ import { Link } from "react-router-dom";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleXmark, faSpinner } from "@fortawesome/free-solid-svg-icons";
-
 import {
-    SearchIcon,
     EllipsisVerticalIcon,
     UserIcon,
     TikTokCoinIcon,
@@ -22,8 +18,7 @@ import Menu from "../menu/Menu";
 import Image from "../image/Image";
 import Button from "../button/Button";
 import Helmet from "../helmet/Helmet";
-import Popper from "../popper/Popper";
-import AccountItem from "../account-item/AccountItem";
+import Search from "../search/Search";
 
 import { MENU_ITEMS } from "../menu/Menu";
 
@@ -76,43 +71,10 @@ const Header = () => {
                     <Link to={configPath.home} className="header__left">
                         <img src={images.logo} alt="" className="header__left__image" />
                     </Link>
-                    <div>
-                        <Tippy
-                            interactive
-                            render={(attrs) => (
-                                <div className="search__result" tabIndex="-1" {...attrs}>
-                                    <Popper>
-                                        <h4 className="search__result__title">
-                                            Accounts
-                                        </h4>
-                                        <AccountItem />
-                                        <AccountItem />
-                                        <AccountItem />
-                                    </Popper>
-                                </div>
-                            )}
-                        >
-                            <div className="header__center">
-                                <input
-                                    type="text"
-                                    className="header__center__input"
-                                    placeholder="Search accounts and video"
-                                    spellCheck={false}
-                                />
-                                <button className="header__center__btn--clear">
-                                    <FontAwesomeIcon icon={faCircleXmark} />
-                                </button>
-                                <FontAwesomeIcon
-                                    icon={faSpinner}
-                                    className="header__center__btn--loading"
-                                />
+                    
+                    {/* Search */}
+                    <Search />
 
-                                <button className="header__center__btn--search">
-                                    <SearchIcon />
-                                </button>
-                            </div>
-                        </Tippy>
-                    </div>
                     <div className="header__right">
                         {currentUser ? (
                             <>

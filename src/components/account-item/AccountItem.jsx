@@ -6,31 +6,31 @@ import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 import Image from "../image/Image";
 
-import { configPath } from "../../config/configPath";
-import { images } from "../../assets/images/images";
-
 import "./account-item.scss";
 
 const AccountItem = (props) => {
+    const data = props.data;
     return (
-        <Link to={configPath.profile} className="account-item">
-            <Image src={images.avatar} alt="" className="account-item__image" />
+        <Link to={`/@:${data?.nickname}`} className="account-item">
+            <Image src={data?.avatar} alt="" className="account-item__image" />
             <div className="account-item__info">
                 <h4 className="account-item__info__name">
-                    <span>Nguyễn Tâm Phước</span>
-                    <FontAwesomeIcon
-                        className="account-item__info__icon"
-                        icon={faCheckCircle}
-                    />
+                    <span>{data?.full_name || data?.first_name + data?.last_name}</span>
+                    {data?.tick && (
+                        <FontAwesomeIcon
+                            className="account-item__info__icon"
+                            icon={faCheckCircle}
+                        />
+                    )}
                 </h4>
-                <div className="account-item__info__username">i@mBi</div>
+                <div className="account-item__info__username">{data?.nickname}</div>
             </div>
         </Link>
     );
 };
 
 AccountItem.propTypes = {
-    // data: PropTypes.object.isRequired,
+    data: PropTypes.object.isRequired,
 };
 
 export default AccountItem;
