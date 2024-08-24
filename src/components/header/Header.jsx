@@ -19,6 +19,7 @@ import {
 import { configPath } from "../../config/configPath";
 
 import Menu from "../menu/Menu";
+import Image from "../image/Image";
 import Button from "../button/Button";
 import Helmet from "../helmet/Helmet";
 import Popper from "../popper/Popper";
@@ -26,8 +27,7 @@ import AccountItem from "../account-item/AccountItem";
 
 import { MENU_ITEMS } from "../menu/Menu";
 
-import logo from "../../assets/images/image.png";
-import avatar from "../../assets/images/avt.jpg";
+import { images } from "../../assets/images/images";
 
 import "./header.scss";
 
@@ -74,7 +74,7 @@ const Header = () => {
             <header className="header">
                 <nav className="header__container">
                     <Link to={configPath.home} className="header__left">
-                        <img src={logo} alt="" className="header__left__image" />
+                        <img src={images.logo} alt="" className="header__left__image" />
                     </Link>
                     <div>
                         <Tippy
@@ -150,9 +150,9 @@ const Header = () => {
                             onChange={handleMenuChange}
                         >
                             {currentUser ? (
-                                <img
+                                <Image
                                     className="header__right__user"
-                                    src={avatar}
+                                    src={images.avatar}
                                     alt=""
                                 />
                             ) : (

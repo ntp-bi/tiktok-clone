@@ -4,15 +4,17 @@ import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
+import Image from "../image/Image";
+
 import { configPath } from "../../config/configPath";
-import avatar from "../../assets/images/avt.jpg";
+import { images } from "../../assets/images/images";
 
 import "./account-item.scss";
 
 const AccountItem = (props) => {
     return (
         <Link to={configPath.profile} className="account-item">
-            <img src={avatar} alt="" className="account-item__image" />
+            <Image src={images.avatar} alt="" className="account-item__image" />
             <div className="account-item__info">
                 <h4 className="account-item__info__name">
                     <span>Nguyễn Tâm Phước</span>
