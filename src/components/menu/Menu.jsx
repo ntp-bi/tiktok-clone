@@ -62,26 +62,31 @@ export const MENU_ITEMS = [
 
 const defaultFn = () => {};
 
-const Menu = ({ children, items = [], onChange = defaultFn }) => {
+const Menu = ({ children, items = [], hideOnClick = false, onChange = defaultFn }) => {
     const [history, setHistory] = useState([{ data: items }]);
+
     const current = history[history.length - 1];
+
+    const handleBack = () => {
+        setHistory((prev) => prev.slice(0, prev.length - 1));
+    };
+
+    const handleReset = () => {
+        setHistory((prev) => prev.slice(0, 1));
+    };
 
     return (
         <Tippy
             interactive
             delay={[0, 700]}
             offset={[12, 8]}
+            hideOnClick={hideOnClick}
             placement="bottom-end"
             render={(attrs) => (
                 <div className="menu" tabIndex="-1" {...attrs}>
                     <Popper className="menu__popper">
                         {history.length > 1 && (
-                            <HeaderMenu
-                                title={current.title}
-                                onBack={() => {
-                                    setHistory((prev) => prev.slice(0, prev.length - 1));
-                                }}
-                            />
+                            <HeaderMenu title={current.title} onBack={handleBack} />
                         )}
                         {current.data.map((item, index) => {
                             const isParent = !!item.children;
@@ -106,7 +111,7 @@ const Menu = ({ children, items = [], onChange = defaultFn }) => {
                     </Popper>
                 </div>
             )}
-            onHide={() => setHistory((prev) => prev.slice(0, 1))}
+            onHide={handleReset}
         >
             {children}
         </Tippy>
@@ -114,8 +119,10 @@ const Menu = ({ children, items = [], onChange = defaultFn }) => {
 };
 
 Menu.propTypes = {
-    items: PropTypes.array.isRequired,
+    items: PropTypes.array,
     children: PropTypes.node.isRequired,
+    hideOnClick: PropTypes.bool,
+    onChange: PropTypes.func,
 };
 
 export const HeaderMenu = ({ title, onBack }) => {
@@ -147,16 +154,11 @@ export const MenuItem = ({ item, onClick }) => {
 HeaderMenu.propTypes = {
     title: PropTypes.string.isRequired,
     onBack: PropTypes.func.isRequired,
-    separate: PropTypes.bool,
 };
 
 MenuItem.propTypes = {
-    item: PropTypes.shape({
-        icon: PropTypes.element,
-        title: PropTypes.string.isRequired,
-        to: PropTypes.string,
-    }).isRequired,
-    onClick: PropTypes.func.isRequired,
+    item: PropTypes.object.isRequired,
+    onClick: PropTypes.func,
 };
 
 export default Menu;

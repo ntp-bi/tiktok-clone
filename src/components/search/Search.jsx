@@ -22,10 +22,10 @@ const Search = () => {
 
     const inputRef = useRef(null);
 
-    const debounced = useDebounce(searchValue, 500);
+    const debouncedValue = useDebounce(searchValue, 500);
 
     useEffect(() => {
-        if (!debounced.trim()) {
+        if (!debouncedValue.trim()) {
             setSearchResult([]);
             return;
         }
@@ -33,14 +33,14 @@ const Search = () => {
         const fetchApi = async () => {
             setLoading(true);
 
-            const result = await search(debounced);
+            const result = await search(debouncedValue);
 
             setSearchResult(result);
             setLoading(false);
         };
 
         fetchApi();
-    }, [debounced]);
+    }, [debouncedValue]);
 
     const handleChangeInput = (e) => {
         const searchValue = e.target.value;
