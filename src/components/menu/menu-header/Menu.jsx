@@ -4,11 +4,11 @@ import Tippy from "@tippyjs/react/headless";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { KeyboardIcon, LanguageIcon, QuestionMarkIcon, ThemeIcon } from "../icons/Icon";
+import { KeyboardIcon, LanguageIcon, QuestionMarkIcon, ThemeIcon } from "../../icons/Icon";
 
-import Button from "../button/Button";
-import Popper from "./../popper/Popper";
-import { configPath } from "../../config/configPath";
+import Button from "../../button/Button";
+import Popper from "../../popper/Popper";
+import { configPath } from "../../../config/configPath";
 
 import "./menu.scss";
 

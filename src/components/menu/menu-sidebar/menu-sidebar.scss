@@ -1,0 +1,47 @@
+@use "../../../sass/" as *;
+
+.menu-sidebar {
+    padding: 8px 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    border-radius: 4px;
+    color: $text-color;
+    transition: background-color ease-in-out 200ms;
+}
+
+.menu-sidebar__item {
+    @include flex(center, unset);
+    width: 100%;
+    padding: 8px 0;
+
+    &.active {
+        color: $primary-color;
+
+        .menu-sidebar__item__icon {
+            display: none;
+        }
+
+        .menu-sidebar__item__icon--active {
+            display: flex;
+        }
+    }
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+
+    &__title {
+        margin-left: 10px;  
+        font-weight: 700;                
+    }
+
+    &__icon,
+    &__icon--active {
+        display: flex;
+    }
+
+    &__icon--active {
+        display: none;
+    }
+    
+}

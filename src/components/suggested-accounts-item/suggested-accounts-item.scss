@@ -1,0 +1,94 @@
+@use "../../sass/" as *;
+
+.suggested-accounts__item {
+    @include flex(center, flex-start);
+    padding: 8px 0;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+
+    &__avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    &__info {
+        flex: 1;
+        margin-left: 12px;
+        line-height: 1.6;
+
+        &__nickname {
+            margin-top: 0;
+            font-size: 1.6rem;
+            color: #161823;
+            line-height: 1;
+
+            .icon--check {
+                margin-left: 4px;
+                font-size: 1.4rem;
+                color: #20d5ec;
+            }
+        }
+    }
+
+    &__name {
+        font-size: 1.2rem;
+        opacity: #161823bf;
+    }
+}
+
+.suggested-accounts__preview {
+    width: 320px;
+    padding: 20px;
+
+    &__header {
+        @include flex(center, space-between);
+
+        &__avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        &__btn-follow {
+            padding: 6px 16px;
+        }
+    }
+
+    &__body {
+        margin-top: 12px;
+        color: #161823;
+
+        &__nickname {
+            font-size: 1.8rem;
+        }
+
+        .check {
+            font-size: 1.4rem;
+            color: #20d5ec;
+            margin-left: 4px;
+        }
+
+        &__name {
+            font-size: 1.4rem;
+        }
+
+        &__analytics {
+            margin-top: 10px;
+            font-size: 1.8rem;
+
+            .value ~ .value {
+                margin-left: 20px;
+            }
+
+            .label {
+                color: #161823bf;
+            }
+        }
+    }
+}

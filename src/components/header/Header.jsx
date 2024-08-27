@@ -14,13 +14,13 @@ import {
 } from "../icons/Icon";
 import { configPath } from "../../config/configPath";
 
-import Menu from "../menu/Menu";
+import Menu from "../menu/menu-header/Menu";
 import Image from "../image/Image";
 import Button from "../button/Button";
 import Helmet from "../helmet/Helmet";
 import Search from "../search/Search";
 
-import { MENU_ITEMS } from "../menu/Menu";
+import { MENU_ITEMS } from "../menu/menu-header/Menu";
 
 import { images } from "../../assets/images/images";
 

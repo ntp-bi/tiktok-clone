@@ -1,0 +1,62 @@
+@use "../../sass/" as *;
+
+.sidebar {
+    width: 300px;
+    padding: 20px 0 26px 0;
+    margin-left: -3px;
+    height: 100vh;
+    overflow-y: hidden;
+
+    &__footer {
+        border-top: 1px solid #e3e3e4;
+        width: 100%;
+
+        &__items {
+            display: flex;
+            flex-direction: column;
+            line-height: 2.2;
+            font-weight: 700;
+            cursor: pointer;
+            color: rgba(22, 24, 35, 0.5);
+            font-size: 1.5rem;
+        }
+    }
+    .copyright {
+        @include flex(center, unset);
+        font-size: 1.25rem;
+        color: rgba(22, 24, 35, 0.5);
+        font-weight: 600;
+
+        span {
+            font-size: 1.8rem;
+            margin-right: 1rem;
+        }
+    }
+}
+
+.sidebar:hover {
+    overflow-y: scroll;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 7px;
+    height: 100%;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(22, 24, 35, 0.06);
+    border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(22, 24, 35, 0.06);
+}
+
+.sidebar-profile {
+    @include flex(center, flex-start);
+    margin-left: -12px;
+}
+
+.sidebar-following {
+    margin: 0 5px;
+}
