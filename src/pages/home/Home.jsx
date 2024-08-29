@@ -7,13 +7,12 @@ import "./home.scss";
 
 const Home = () => {
     const [videos, setVideos] = useState([]);
-    const [page, setPage] = useState(3);
+    const [page, setPage] = useState(1);
 
     useEffect(() => {
         const fetchApi = async () => {
             const result = await video("for-you", page);
-            setVideos((prev) => [...prev, ...result]);
-            console.log(result);
+            setVideos((prev) => [...prev, ...result]);         
         };
 
         fetchApi();
