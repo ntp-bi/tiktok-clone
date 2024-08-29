@@ -12,6 +12,7 @@ import telegram from "./telegram.svg";
 import tiktok from "./tiktok.svg";
 import twitter from "./twitter.svg";
 import whatsapp from "./whatsapp.svg";
+import google from "./google.svg";
 
 export const images = {
     logo,
@@ -28,4 +29,5 @@ export const images = {
     tiktok,
     twitter,
     whatsapp,
+    google,
 };

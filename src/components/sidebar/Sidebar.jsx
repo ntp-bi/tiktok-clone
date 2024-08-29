@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import Image from "./../image/Image";
 import { configPath } from "../../config/configPath";
 import { images } from "./../../assets/images/images";
 
 import Button from "../button/Button";
+import { ModalContext } from "../ModalProvider/ModalProvider";
 import MenuSidebar, { MenuItem } from "../menu/menu-sidebar/MenuSidebar";
 import SuggestedAccounts from "../suggested-accounts/SuggestedAccounts";
 
@@ -37,7 +38,8 @@ const footerData = [
 ];
 
 const Sidebar = () => {
-    const currentUser = true;
+    const currentUser = false;
+    const context = useContext(ModalContext);
 
     return (
         <aside className="sidebar">
@@ -94,7 +96,9 @@ const Sidebar = () => {
                     </div>
                 ) : (
                     <div className="login">
-                        <Button primary>Log in</Button>
+                        <Button outline onClick={context.handleShowModal}>
+                            Log in
+                        </Button>
                     </div>
                 )}
             </MenuSidebar>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Tippy from "@tippyjs/react/headless";
@@ -7,6 +7,7 @@ import Image from "../image/Image";
 import Button from "../button/Button";
 import Popper from "../popper/Popper";
 import VideoItem from "../video-item/VideoItem";
+import { ModalContext } from "../ModalProvider/ModalProvider";
 
 import { MusicIcon } from "../icons/Icon";
 
@@ -14,6 +15,7 @@ import "./video.scss";
 
 const Video = (props) => {
     const data = props.data;
+    const context = useContext(ModalContext);
 
     return (
         <div className="video">
@@ -119,7 +121,9 @@ const Video = (props) => {
                     </Link>
                 </div>
                 <div className="video__header__btn">
-                    <Button outline>Follow</Button>
+                    <Button outline onClick={context.handleShowModal}>            
+                        Follow
+                    </Button>
                 </div>
             </div>
             <div className="video__body">

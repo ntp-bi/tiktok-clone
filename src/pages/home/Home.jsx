@@ -7,7 +7,7 @@ import "./home.scss";
 
 const Home = () => {
     const [videos, setVideos] = useState([]);
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState(3);
 
     useEffect(() => {
         const fetchApi = async () => {

@@ -1,7 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 
 import Button from "../button/Button";
+import ShareAction from "../share-action/ShareAction";
+import { ModalContext } from "../ModalProvider/ModalProvider";
 
 import {
     CommentIcon,
@@ -14,7 +16,6 @@ import {
 } from "../icons/Icon";
 
 import "./video-item.scss";
-import ShareAction from "../share-action/ShareAction";
 
 const VideoItem = (props) => {
     const data = props.data;
@@ -25,6 +26,8 @@ const VideoItem = (props) => {
     const [prevVolume, setPrevVolume] = useState(volume);
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
+
+    const context = useContext(ModalContext);
 
     const videoRef = useRef(null);
     const progressRef = useRef(null);
@@ -179,20 +182,23 @@ const VideoItem = (props) => {
             </div>
             <div className="video-item__actions">
                 <div className="video-item__actions__btn">
-                    <Button className="btn">
+                    <Button className="btn" onClick={context.handleShowModal}>
                         <HeartIcon />
                     </Button>
                     <p>{data?.likes_count}</p>
                 </div>
                 <div className="video-item__actions__btn">
-                    <Button className="btn">
+                    <Button className="btn" onClick={context.handleShowModal}>
                         <CommentIcon />
                     </Button>
                     <p>{data?.comments_count}</p>
                 </div>
                 <ShareAction>
                     <div className="video-item__actions__btn">
-                        <Button className="btn">
+                        <Button
+                            className="btn"
+                            onClick={context.handleShowModal}
+                        >
                             <ShareSolidIcon />
                         </Button>
                         <p>{data?.shares_count}</p>

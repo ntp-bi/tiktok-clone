@@ -1,6 +1,7 @@
 @use "../../sass/" as *;
 
 .video-item {
+    position: relative;
     @include flex(center, center);
     margin: 14px 0 40px 0;
     border-bottom: 1px solid rgba(22, 24, 35, 0.1);
@@ -38,7 +39,7 @@
             // Hiển thị control khi hover vào video hoặc control
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s;                     
+            transition: opacity 0.3s, visibility 0.3s;
 
             &:hover,
             .video-item__wrapper__video:hover + & {
@@ -149,8 +150,9 @@
     }
 
     &__actions {
-        position: relative;
-        bottom: -120px;
+        position: absolute;
+        right: 250px;
+        bottom: 40px;
 
         &__btn {
             @include flex(center, center);
@@ -166,6 +168,10 @@
                     height: 50px;
                     border-radius: 50%;
                     background-color: rgba(22, 24, 35, 0.06);
+
+                    &:hover {
+                        background: rgba(22, 24, 35, 0.03);
+                    }
                 }
             }
 
