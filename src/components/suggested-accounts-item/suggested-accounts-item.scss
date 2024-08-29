@@ -42,8 +42,8 @@
 }
 
 .suggested-accounts__preview {
-    width: 320px;
-    padding: 20px;
+    width: 280px;
+    padding: 10px 18px;
 
     &__header {
         @include flex(center, space-between);

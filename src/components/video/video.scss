@@ -1,0 +1,82 @@
+@use "../../sass/" as *;
+
+.video {
+    flex: 1;
+    margin: 20px 0 0 50px;       
+
+    &__header {
+        @include flex(flex-start, space-between);
+        margin-left: 50px;
+        padding-right: 100px;
+
+        &__wrapper {
+            @include flex(flex-start, flex-start);
+
+            &__image {
+                width: 56px;
+                height: 56px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            &__info {
+                line-height: 1.5;
+                margin-left: 16px;
+                position: relative;
+                top: -4px;
+
+                &__user {
+                    @include flex(center, unset);
+
+                    h4 {
+                        font-size: 1.8rem;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+
+                    span {
+                        margin-left: 4px;
+                        font-size: 1.4rem;
+                        color: rgba(22, 24, 35, 0.5);
+                    }
+
+                    .suggested-accounts__preview {
+                        padding: 10px 20px;
+                        width: 320px;
+
+                        &__header__btn--follow {
+                            span {
+                                color: $primary-color;
+                            }
+                        }
+
+                        &__body__desc {
+                            border-top: 1px solid rgba(22, 24, 35, 0.12);
+                            margin-top: 10px;
+
+                            span {
+                                margin-top: 10px;
+                                display: block;
+                            }
+                        }
+                    }
+                }
+
+                &__desc {
+                    font-size: 1.6rem;
+                }
+
+                &__icon {
+                    @include flex(center, unset);
+                    font-weight: 600;
+
+                    .icon--music {
+                        margin-right: 4px;
+                    }
+                }
+            }
+        }
+    }    
+}

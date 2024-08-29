@@ -1,0 +1,64 @@
+@use "../../sass/" as *;
+
+.share-action {
+    &__wrapper {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        width: 260px;
+        max-height: 448px;
+        overflow: hidden;
+        overflow-y: scroll;
+        background-color: rgb(255, 255, 255);
+        box-shadow: rgb(0 0 0 / 12%) 0px 2px 12px;
+        border-radius: 8px;
+
+        // Scrollbar CSS
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 2px;
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        .popper {
+            padding: 8px;
+            width: 260px;
+            overflow: hidden;
+        }
+
+        &__item {
+            @include flex(center, flex-start);
+            cursor: pointer;
+            padding: 8px;
+            -webkit-box-align: center;
+
+            &:hover {
+                background: rgba(22, 24, 35, 0.03);
+            }
+
+            svg,
+            img {
+                width: 26px;
+                height: 26px;
+                margin-right: 12px;
+            }
+        }
+
+        &__btn--more {
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+
+            &:hover {
+                background: rgba(22, 24, 35, 0.03);
+            }
+        }
+    }
+}

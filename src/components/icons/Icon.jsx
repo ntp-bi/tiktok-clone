@@ -588,7 +588,7 @@ export const PlayIcon = ({ className, width = "1.8rem", height = "1.8rem" }) => 
     </svg>
 );
 
-export const PlaySolidIcon = ({ className, width = "2rem", height = "2rem" }) => (
+export const PlaySolidIcon = ({ className, width = "2.8rem", height = "2.8rem" }) => (
     <svg
         className={className}
         width={width}
@@ -605,7 +605,7 @@ export const PlaySolidIcon = ({ className, width = "2rem", height = "2rem" }) =>
     </svg>
 );
 
-export const PauseIcon = ({ className, width = "2rem", height = "2rem" }) => (
+export const PauseIcon = ({ className, width = "2.8rem", height = "2.8rem" }) => (
     <svg
         className={className}
         width={width}
@@ -619,7 +619,7 @@ export const PauseIcon = ({ className, width = "2rem", height = "2rem" }) => (
     </svg>
 );
 
-export const VolumeIcon = ({ className, width = "2.4rem", height = "2.4rem" }) => (
+export const VolumeIcon = ({ className, width = "2.8rem", height = "2.8rem" }) => (
     <svg
         className={className}
         width={width}
@@ -636,7 +636,7 @@ export const VolumeIcon = ({ className, width = "2.4rem", height = "2.4rem" }) =
     </svg>
 );
 
-export const MutedIcon = ({ className, width = "2.4rem", height = "2.4rem" }) => (
+export const MutedIcon = ({ className, width = "2.8rem", height = "2.8rem" }) => (
     <svg
         className={className}
         width={width}

@@ -1,6 +1,7 @@
 @use "../../sass/" as *;
 
 .sidebar {
+    position: fixed;   
     width: 300px;
     padding: 20px 0 26px 0;
     margin-left: -3px;
@@ -26,6 +27,7 @@
         font-size: 1.25rem;
         color: rgba(22, 24, 35, 0.5);
         font-weight: 600;
+        margin-bottom: 60px;
 
         span {
             font-size: 1.8rem;
