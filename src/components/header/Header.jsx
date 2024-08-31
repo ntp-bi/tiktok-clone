@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
@@ -19,6 +19,8 @@ import Image from "../image/Image";
 import Button from "../button/Button";
 import Helmet from "../helmet/Helmet";
 import Search from "../search/Search";
+
+import { ModalContext } from "../ModalProvider/ModalProvider";
 
 import { MENU_ITEMS } from "../menu/menu-header/Menu";
 
@@ -52,7 +54,9 @@ const userMenu = [
 ];
 
 const Header = () => {
-    const currentUser = true;
+    const currentUser = false;
+
+    const context = useContext(ModalContext);
 
     // Handle logic
     const handleMenuChange = (menuItem) => {
@@ -69,9 +73,13 @@ const Header = () => {
             <header className="header">
                 <nav className="header__container">
                     <Link to={configPath.home} className="header__left">
-                        <img src={images.logo} alt="" className="header__left__image" />
+                        <img
+                            src={images.logo}
+                            alt=""
+                            className="header__left__image"
+                        />
                     </Link>
-                    
+
                     {/* Search */}
                     <Search />
 
@@ -102,8 +110,15 @@ const Header = () => {
                             </>
                         ) : (
                             <>
-                                <Button text>Upload</Button>
-                                <Button primary>Login</Button>
+                                <Button text onClick={context.handleShowModal}>
+                                    Upload
+                                </Button>
+                                <Button
+                                    primary
+                                    onClick={context.handleShowModal}
+                                >
+                                    Login
+                                </Button>
                             </>
                         )}
 

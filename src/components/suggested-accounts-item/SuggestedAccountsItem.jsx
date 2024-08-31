@@ -28,7 +28,7 @@ const SuggestedAccountsItem = (props) => {
                     </div>
                 )}
             >
-                <Link to={`/@${data?.nickname}`}>
+                <Link to={`/profile/${encodeURIComponent(data?.nickname)}`}>
                     <div className="suggested-accounts__item">
                         <Image
                             src={data?.avatar}

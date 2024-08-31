@@ -1,0 +1,56 @@
+@use "../../sass/" as *;
+
+.video-preview {
+    &__wrapper {
+        position: relative;
+
+        &__inner {                      
+            &__image,
+            &__video {
+                width: 245px;
+                height: 340px;
+                cursor: pointer;
+                border-radius: 5px;
+                overflow: hidden;
+
+                img,
+                video {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            &__video {
+                z-index: 2;
+                display: none;
+            }
+
+            &:hover {
+                .video-preview__wrapper__inner__image {
+                    z-index: 1;
+                    display: none;
+                }
+
+                .video-preview__wrapper__inner__video {
+                    z-index: 2;
+                    display: block;
+                }
+            }
+
+            &__views {
+                @include flex(center, flex-start);
+                position: absolute;
+                left: 10px;
+                bottom: 10px;
+                color: $white-color;
+                cursor: pointer;
+
+                &__count {
+                    font-size: 1.8rem;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}

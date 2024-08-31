@@ -1,0 +1,261 @@
+@use "../../sass/" as *;
+
+.profile {
+    padding: 20px 0 26px 0;
+    margin-left: 360px;
+
+    &__wrapper {
+        &__header {
+            @include flex(flex-start, flex-start);
+
+            &__image {
+                width: 212px;
+                height: 212px;
+                margin: 18px 30px 0 0;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            }
+
+            &__info {
+                display: flex;
+                flex-direction: column;
+                margin-top: 16px;
+
+                &__username {
+                    @include flex(center, flex-start);
+
+                    .nickname {
+                        font-size: 2.4rem;
+                        font-weight: 700;
+                        margin-right: 6px;
+                    }
+
+                    .icon--tick {
+                        margin: 0 6px;
+                    }
+
+                    .fullname {
+                        position: relative;
+                        top: 4px;
+                        margin-left: 6px;
+                        font-weight: 500;
+                        font-size: 1.8rem;
+                        text-overflow: ellipsis;
+                        height: 25px;
+                        overflow: hidden;
+                        max-width: 450px;
+                        white-space: nowrap;
+                        display: flex;
+                        align-items: flex-end;
+                        color: #161823;
+                    }
+                }
+
+                &__btns {
+                    @include flex(center, flex-start);
+                    margin: 10px 0;
+
+                    .btn {
+                        @include flex(center, center);
+                        font-size: 1.6rem;
+                        padding: 9px 16px;
+                        min-width: 108px;
+                        font-weight: 600;
+                        height: 40px;
+                        border-radius: 6px;
+                        border: 1px solid transparent;
+                        cursor: pointer;
+                        font-family: "ProximaNova", sans-serif;
+                        user-select: none;
+                    }
+
+                    .btn--follow {
+                        background-color: $primary-color;
+                        color: $white-color;
+                    }
+
+                    .btn--message {
+                        background-color: #f2f2f2;
+
+                        &:hover {
+                            background-color: #e0e0e0;
+                        }
+                    }
+
+                    .btn--share,
+                    .btn--more {
+                        @include flex(center, center);
+                        background-color: #f2f2f2;
+                        border-radius: 6px;
+                        padding: 9px 12px;
+                        height: 40px;
+                        cursor: pointer;
+                        margin-right: 16px;
+
+                        svg {
+                            position: relative;
+                            top: 3px;
+                        }
+
+                        &:hover {
+                            background-color: #e0e0e0;
+                        }
+
+                        .popper {
+                            width: 162px;
+                            padding: 0 16px;
+
+                            div {
+                                @include flex(center, unset);
+                                padding: 13px 0;
+                                font-weight: 600;
+
+                                svg {
+                                    width: 1.6rem;
+                                    height: 1.6rem;
+                                    position: relative;
+                                    top: 0px;
+                                    margin-right: 15px;
+                                }
+                            }
+
+                            span {
+                                border: 1px solid #e3e3e4;
+                            }
+                        }
+                    }
+                    .btn--share {
+                        svg {
+                            position: relative;
+                            top: -1px;
+                        }
+                    }
+                }
+
+                &__count {
+                    @include flex(center, flex-start);
+                    margin-bottom: 10px;
+
+                    div {
+                        margin-right: 20px;
+                        font-size: 2rem;
+                        font-weight: 700;
+
+                        span {
+                            font-weight: 500;
+                            font-size: 0.8em;
+                            color: rgba(22, 24, 35, 0.75);
+                            margin-left: 10px;
+                            cursor: default;
+                        }
+
+                        .underline:hover {
+                            text-decoration: underline;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                &__bio {
+                    color: #161823;
+                    margin-bottom: 10px;
+                }
+
+                &__link {
+                    @include flex(center, flex-start);
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    max-width: 200px;
+                    font-weight: 600;
+
+                    &:hover {
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        &__tabs {
+            @include flex(center, space-between);
+            border-bottom: 1px solid #f0f0f0;
+            margin: 20px 0;
+
+            &__tab {
+                @include flex(center, flex-start);
+
+                &__item {
+                    @include flex(center, center);
+                    height: 44px;
+                    width: 120px;
+                    font-weight: 600;
+                    font-size: 1.75rem;
+                    color: rgb(115, 116, 123);
+                    cursor: pointer;
+
+                    &.active {
+                        color: rgb(22, 24, 35);
+                        border-bottom: 2px solid rgb(22, 24, 35);
+                    }
+
+                    svg {
+                        position: relative;
+                        top: -2px;
+                        margin-right: 10px;
+                    }
+                }
+
+                &__btns {
+                    @include flex(center, space-between);
+                    background-color: #f2f2f2;
+                    padding: 2px;
+                    border-radius: 4px;
+                    min-height: 36px;
+                    min-width: 190px;
+                    
+                    &__btn {
+                        color: #0000007a;
+                        font-weight: 600;
+                        min-width: 48px;
+                        padding: 0 10px;
+                        cursor: pointer;
+
+                        &.active {
+                            background-color: #fff;
+                            min-height: 34px;
+                            border-radius: 4px;
+                            color: #000;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        &__videos {    
+            width: 100%;
+            h3 {
+                color: rgb(22, 24, 35);
+                font-size: 1.1em;
+                font-weight: 600;
+                margin-bottom: 16px;
+            }
+
+            &__video {
+               @include flex(center, flex-start);
+               flex-wrap: wrap;
+               gap: 20px;
+
+                &__item {
+                    
+                }
+            }
+        }
+    }
+}

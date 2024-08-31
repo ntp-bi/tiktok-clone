@@ -67,15 +67,20 @@ const EXPANDED_SHARE_MENU = [
 
 const ShareAction = (props) => {
     const [expanded, setExpanded] = useState(false);
+    const offset = props.offset;
+    const visible = props.visible;
+    const onClickOutside = props.onClickOutside;
 
     return (
         <div className="share-action">
             <Tippy
                 interactive
+                offset={offset}
+                visible={visible}
+                onClickOutside={onClickOutside}
                 hideOnClick={true}
                 placement="top"
                 delay={[200, 700]}
-                offset={[80, 0]}
                 zIndex="999"
                 render={(attrs) => (
                     <div
@@ -112,7 +117,7 @@ const ShareAction = (props) => {
                         </Popper>
                     </div>
                 )}
-                onShow={() => setExpanded(false)}                
+                onShow={() => setExpanded(false)}
             >
                 {props.children}
             </Tippy>
@@ -122,6 +127,9 @@ const ShareAction = (props) => {
 
 ShareAction.propTypes = {
     children: PropTypes.node.isRequired,
+    offset: PropTypes.array,
+    visible: PropTypes.bool,
+    onClickOutside: PropTypes.func,
 };
 
 export default ShareAction;

@@ -2,7 +2,7 @@ export const configPath = {
     home: "/",
     following: "/following",
     live: "/live",
-    profile: "/@:nickname",
+    profile: "/profile/:nickname",
     search: "/search/user/:value",
     upload: "/upload",
     coin: "/coin",

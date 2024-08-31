@@ -11,7 +11,7 @@ import "./account-item.scss";
 const AccountItem = (props) => {
     const data = props.data;
     return (
-        <Link to={`/@:${data?.nickname}`} className="account-item">
+        <Link to={`/profile/${encodeURIComponent(data?.nickname)}`} className="account-item">
             <Image src={data?.avatar} alt="" className="account-item__image" />
             <div className="account-item__info">
                 <h4 className="account-item__info__name">

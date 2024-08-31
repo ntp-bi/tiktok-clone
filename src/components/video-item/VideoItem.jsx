@@ -193,7 +193,7 @@ const VideoItem = (props) => {
                     </Button>
                     <p>{data?.comments_count}</p>
                 </div>
-                <ShareAction>
+                <ShareAction offset={[70, 0]}>
                     <div className="video-item__actions__btn">
                         <Button
                             className="btn"

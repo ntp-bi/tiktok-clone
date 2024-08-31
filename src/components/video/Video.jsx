@@ -26,7 +26,7 @@ const Video = (props) => {
                         src={data?.user.avatar}
                     />
                     <Link
-                        to={`/@${data?.user.nickname}`}
+                        to={`/profile/${encodeURIComponent(data?.user.nickname)}`}
                         className="video__header__wrapper__info"
                     >
                         <div className="video__header__wrapper__info__user">
