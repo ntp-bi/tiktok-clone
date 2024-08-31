@@ -36,17 +36,6 @@
             width: 90%;
             cursor: pointer;
 
-            // Hiển thị control khi hover vào video hoặc control
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s;
-
-            &:hover,
-            .video-item__wrapper__video:hover + & {
-                opacity: 1;
-                visibility: visible;
-            }
-
             &__progress {
                 @include flex(center, center);
                 width: 76%;
@@ -181,5 +170,20 @@
                 margin-top: -2px;
             }
         }
+    }
+}
+
+.video-item__wrapper__control__play,
+.video-item__wrapper__control__progress {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.video-item__wrapper:hover {
+    .video-item__wrapper__control__play,
+    .video-item__wrapper__control__progress {
+        opacity: 1;
+        visibility: visible;
     }
 }

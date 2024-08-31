@@ -133,8 +133,9 @@ const VideoItem = (props) => {
                     style={
                         data?.meta.video.resolution_x <
                         data?.meta.video.resolution_y
-                            ? { width: "400px" }
-                            : { width: "750px" }
+                            ? { width: "400px", height: "76vh" }
+                            : { width: "400px", height: "76vh" }
+                            
                     }
                     loop
                     ref={videoRef}

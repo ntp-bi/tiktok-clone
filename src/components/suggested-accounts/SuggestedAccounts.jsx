@@ -34,7 +34,7 @@ const SuggestedAccounts = (props) => {
                 className="suggested-accounts__btn-more"
                 onClick={() => setSeeAll(!seeAll)}
             >
-                See all
+                {`${!seeAll ? "See more" : "See less"}`}
             </p>
         </div>
     );

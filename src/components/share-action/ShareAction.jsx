@@ -88,7 +88,7 @@ const ShareAction = (props) => {
                         tabIndex="-1"
                         {...attrs}
                     >
-                        <Popper>
+                        <Popper>z
                             {expanded
                                 ? EXPANDED_SHARE_MENU.map((item, index) => (
                                       <div
