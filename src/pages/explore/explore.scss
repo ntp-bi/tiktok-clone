@@ -1,0 +1,62 @@
+@use "../../sass/" as *;
+
+.explore {
+    padding: 20px 0 26px 0;
+    margin-left: 360px;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        max-width: 1040px;
+        width: 100%;
+
+        &__header {
+            @include flex(center, space-between);
+            width: 100%;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            padding: 10px 0;
+
+            .category-item {
+                display: flex;
+                -webkit-box-align: center;
+                align-items: center;
+                padding: 0px 12px;
+                height: 42px;
+                background-color: rgba(22, 24, 35, 0.06);
+                border-radius: 8px;
+                font-size: 17px;
+                color: rgb(22, 24, 35);
+                cursor: pointer;
+                gap: 6px;
+                border: none;
+                gap: 10px;
+                font-weight: 500;
+                transition: background 0.3s ease;
+
+                &.active {
+                    background-color: black;
+                    color: $white-color;
+                }
+            }
+        }
+
+        &__content {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: space-between;
+            gap: 20px;
+        }
+    }
+}
+
+.swiper-container {
+    width: 100%;
+}
+
+.swiper-slide {
+    flex-shrink: 0;
+    width: auto;
+}

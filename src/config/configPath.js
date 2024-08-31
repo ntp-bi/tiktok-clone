@@ -8,4 +8,5 @@ export const configPath = {
     coin: "/coin",
     setting: "/setting",
     feedback: "/feedback",
+    explore: "/explore"
 };

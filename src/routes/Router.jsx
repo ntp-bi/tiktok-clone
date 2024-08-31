@@ -10,6 +10,7 @@ import Coin from "../pages/coin/Coin";
 import Live from "../pages/live/Live";
 import Upload from "../pages/upload/Upload";
 import Search from "../pages/search/Search";
+import Explore from "../pages/explore/Explore";
 import Setting from "../pages/setting/Setting";
 import Profile from "../pages/profile/Profile";
 import Feedback from "../pages/feedback/Feedback";
@@ -25,6 +26,7 @@ export const publicRoutes = [
     { path: configPath.search, component: Search },
     { path: configPath.setting, component: Setting },
     { path: configPath.profile, component: Profile },
+    { path: configPath.explore, component: Explore },
     { path: configPath.following, component: Following },
     { path: configPath.coin, component: Coin, layout: HeaderOnly },
     { path: configPath.upload, component: Upload, layout: HeaderOnly },

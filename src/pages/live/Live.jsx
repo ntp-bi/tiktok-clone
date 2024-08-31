@@ -4,7 +4,7 @@ import "./live.scss";
 
 const Live = () => {
   return (
-    <div>
+    <div className='live'>
       Live
     </div>
   )
