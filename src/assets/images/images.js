@@ -13,6 +13,10 @@ import tiktok from "./tiktok.svg";
 import twitter from "./twitter.svg";
 import whatsapp from "./whatsapp.svg";
 import google from "./google.svg";
+import i720 from "./i720.svg";
+import camera from "./camera.svg";
+import cut from "./cut.svg";
+import file from "./file.svg";
 
 export const images = {
     logo,
@@ -30,4 +34,8 @@ export const images = {
     twitter,
     whatsapp,
     google,
+    i720,
+    camera,
+    cut,
+    file,
 };
